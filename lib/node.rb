@@ -1,4 +1,6 @@
 class Node
+  attr_accessor :value, :next_node
+  
   def value(value = nil)
     @value = value
   end
