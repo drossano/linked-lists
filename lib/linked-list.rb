@@ -132,5 +132,11 @@ class LinkedList
     new_node = Node.new(value, at(index))
     at(index - 1).next_node = new_node
   end
+
+  def remove_at(index)
+    at(index - 1).next_node = at(index + 1)
+    #at(index).next_node = nil
+  end
+
 end
 
