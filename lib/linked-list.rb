@@ -1,5 +1,5 @@
 require_relative 'node'
-
+require 'pry-byebug'
 class LinkedList
   def append(value)
     node = Node.new(value)
@@ -76,6 +76,24 @@ class LinkedList
       end
     end
     nil
+  end
+
+  def contains?(value)
+    if @head.nil?
+      false
+    elsif @head.value == value
+      true
+    else
+      current_index = 0
+      until at(current_index).nil? || at(current_index).value == value
+        current_index += 1
+      end
+      if at(current_index).nil?
+        false
+      else
+        true
+      end
+    end
   end
 end
 
