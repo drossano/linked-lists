@@ -135,8 +135,6 @@ class LinkedList
 
   def remove_at(index)
     at(index - 1).next_node = at(index + 1)
-    #at(index).next_node = nil
   end
-
 end
 
