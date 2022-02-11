@@ -47,12 +47,16 @@ class LinkedList
     if defined?(@head)
       current_node = @head
       current_index = 0
-      until current_index == index
+      until current_index == index || current_node.nil?
         current_index += 1
         current_node = current_node.next_node
       end
     end
-    current_node.value
+    if current_node.nil?
+      nil
+    else
+      current_node.value
+    end
   end
-
 end
+
