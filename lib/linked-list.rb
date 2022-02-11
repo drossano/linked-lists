@@ -1,15 +1,15 @@
 require_relative 'node'
-require 'pry-byebug'
+
+# Stores & manipulates linked list
 class LinkedList
   def append(value)
     node = Node.new(value)
     if defined?(@head)
       @tail.next_node = node
-      @tail = node
     else
       @head = node
-      @tail = node
     end
+    @tail = node
   end
 
   def prepend(value)
@@ -68,11 +68,9 @@ class LinkedList
         @head = nil
         @tail = nil
       else
-        until at(tail_index).nil?
-          tail_index += 1
-        end
-          @tail = at(tail_index - 2)
-          @tail.next_node = nil
+        tail_index += 1 until at(tail_index).nil?
+        @tail = at(tail_index - 2)
+        @tail.next_node = nil
       end
     end
     nil
@@ -85,9 +83,7 @@ class LinkedList
       true
     else
       current_index = 0
-      until at(current_index).nil? || at(current_index).value == value
-        current_index += 1
-      end
+      current_index += 1 until at(current_index).nil? || at(current_index).value == value
       if at(current_index).nil?
         false
       else
@@ -103,9 +99,7 @@ class LinkedList
       0
     else
       current_index = 0
-      until at(current_index).nil? || at(current_index).value == value
-        current_index += 1
-      end
+      current_index += 1 until at(current_index).nil? || at(current_index).value == value
       if at(current_index).nil?
         nil
       else
@@ -116,16 +110,16 @@ class LinkedList
 
   def to_s
     if @head.nil?
-      puts "nil"
+      puts 'nil'
     else
-      list_string = ""
+      list_string = ''
       current_index = 0
       until at(current_index).nil?
         list_string.concat("( #{at(current_index).value} ) -> ")
         current_index += 1
       end
     end
-    list_string.concat("nil")
+    list_string.concat('nil')
   end
 
   def insert_at(value, index)
