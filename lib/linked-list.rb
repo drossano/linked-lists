@@ -127,5 +127,10 @@ class LinkedList
     end
     list_string.concat("nil")
   end
+
+  def insert_at(value, index)
+    new_node = Node.new(value, at(index))
+    at(index - 1).next_node = new_node
+  end
 end
 
