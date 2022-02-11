@@ -95,5 +95,23 @@ class LinkedList
       end
     end
   end
+
+  def find(value)
+    if @head.nil?
+      nil
+    elsif @head.value == value
+      0
+    else
+      current_index = 0
+      until at(current_index).nil? || at(current_index).value == value
+        current_index += 1
+      end
+      if at(current_index).nil?
+        nil
+      else
+        current_index
+      end
+    end
+  end
 end
 
