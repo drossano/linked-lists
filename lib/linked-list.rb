@@ -109,10 +109,8 @@ class LinkedList
   end
 
   def to_s
-    if @head.nil?
-      puts 'nil'
-    else
-      list_string = ''
+    list_string = ''
+    unless @head.nil?
       current_index = 0
       until at(current_index).nil?
         list_string.concat("( #{at(current_index).value} ) -> ")
