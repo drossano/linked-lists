@@ -113,5 +113,19 @@ class LinkedList
       end
     end
   end
+
+  def to_s
+    if @head.nil?
+      puts "nil"
+    else
+      list_string = ""
+      current_index = 0
+      until at(current_index).nil?
+        list_string.concat("( #{at(current_index).value} ) -> ")
+        current_index += 1
+      end
+    end
+    list_string.concat("nil")
+  end
 end
 
