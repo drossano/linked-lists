@@ -34,7 +34,7 @@ class LinkedList
         current_node = current_node.next_node
       end
     end
-    puts "#{size} item(s) are in the list"
+    size
   end
 
   def at(index)
@@ -45,7 +45,6 @@ class LinkedList
         current_index += 1
         current_node = current_node.next_node
       end
-    else
       nil
     end
     if current_node.nil?
