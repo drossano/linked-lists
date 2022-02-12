@@ -76,18 +76,23 @@ class LinkedList
   end
 
   def contains?(value)
-    if @head.nil?
+    # if @head.nil?
+    #   false
+    # elsif @head.value == value
+    #   true
+    # else
+    #   current_index = 0
+    #   current_index += 1 until at(current_index).nil? || at(current_index).value == value
+    #   if at(current_index).nil?
+    #     false
+    #   else
+    #     true
+    #   end
+    # end
+    if find(value).nil?
       false
-    elsif @head.value == value
-      true
     else
-      current_index = 0
-      current_index += 1 until at(current_index).nil? || at(current_index).value == value
-      if at(current_index).nil?
-        false
-      else
-        true
-      end
+      true
     end
   end
 
