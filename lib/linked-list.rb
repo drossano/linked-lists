@@ -63,13 +63,12 @@ class LinkedList
 
   def pop
     if defined?(@head)
-      tail_index = 0
       if @head.next_node.nil?
         @head = nil
         @tail = nil
       else
-        tail_index += 1 until at(tail_index).nil?
-        @tail = at(tail_index - 2)
+        tail_index = find(tail)
+        @tail = at(tail_index - 1)
         @tail.next_node = nil
       end
     end
