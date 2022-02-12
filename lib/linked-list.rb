@@ -2,6 +2,8 @@ require_relative 'node'
 
 # Stores & manipulates linked list
 class LinkedList
+  attr_reader :head, :tail
+
   def append(value)
     node = Node.new(value)
     if defined?(@head)
@@ -33,14 +35,6 @@ class LinkedList
       end
     end
     puts "#{size} item(s) are in the list"
-  end
-
-  def head
-    @head.value
-  end
-
-  def tail
-    @tail.value
   end
 
   def at(index)
