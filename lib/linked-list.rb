@@ -61,8 +61,10 @@ class LinkedList
         @head = nil
         @tail = nil
       else
-        @tail = at(find(tail) - 1)
+        old_tail = @tail.value
+        @tail = at(find(old_tail) - 1)
         @tail.next_node = nil
+        return old_tail
       end
     end
     nil
